@@ -2,6 +2,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative "../config/environment"
 require "rails/test_help"
 
+
+
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
@@ -17,3 +19,5 @@ class ActionController::TestCase
   include Devise::Test::ControllerHelpers
   include Devise::Test::IntegrationHelpers
 end
+
+require 'mocha/minitest'

@@ -1,5 +1,6 @@
 require "test_helper"
 
+
 class ConsultationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
@@ -19,4 +20,15 @@ class ConsultationTest < ActiveSupport::TestCase
     @consultation.user_id = nil
     refute @consultation.valid?
   end
+
+  test 'callback schedule_interview after_create' do  
+    
+    @query = Schedule.where(consultation_id: @consultation.id)
+
+    assert @query.length, 1
+
+
+   end
+
+  
 end

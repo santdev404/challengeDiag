@@ -10,7 +10,7 @@ one:
   systolic: 1
   diastolic: 1
   heart_rate: 1
-  user: one
+  user: 1
 
 two:
   disease: MyString

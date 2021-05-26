@@ -1,33 +1,40 @@
+
 <p id="notice"><%= notice %></p>
 
-<h1>Schedules</h1>
+<div class="row">
+    <div class="col-9">
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Consultation</th>
-      <th>Start at</th>
-      <th>End at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <h1>Schedule</h1>
 
-  <tbody>
-    <% @schedules.each do |schedule| %>
-      <tr>
-        <td><%= schedule.user_id %></td>
-        <td><%= schedule.consultation_id %></td>
-        <td><%= schedule.start_at %></td>
-        <td><%= schedule.end_at %></td>
-        <td><%= link_to 'Show', schedule %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                <th scope="col">User</th>
+                <th scope="col">Consultation number</th>
+                <th scope="col">Disease</th>
+                <th scope="col">Start at</th>
+                <th scope="col">End at</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+            <% @schedules.each do |schedule|%>
+                <tr>
 
-<br>
+                    <td><%= schedule.user.email %> </td>
+                    <td><%= schedule.consultation_id%> </td>
+                    <td><%= schedule.consultation.disease %> </td>
+                    <td><%= schedule.start_at.to_s(:stamp) %> </td>
+                    <td><%= schedule.end_at.to_s(:stamp)%> </td>
+                    
+                  
+                </tr>
+            <%end%>
+                
+            </tbody>
+            </table>
+    </div>
+</div>
+<%= link_to 'Back', root_path, class: "btn btn-danger" %>
 
-<%= link_to 'New Schedule', new_schedule_path %>
+

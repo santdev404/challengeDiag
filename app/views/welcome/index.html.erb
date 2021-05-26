@@ -1,4 +1,18 @@
-<h1>welcome</h1>
-<hr/>
 
-<%= link_to 'log out', destroy_user_session_path, method: :delete%>
+<div class="row">
+<div class="col-9">
+    <br />
+    <div class="card">
+        <div class="card-header">
+            Diagnostikare   
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Schedule a new consultation</h5>
+            <p class="card-text">In order to schedule a new consultarion, please click "New consultation button"</p>
+            <%= link_to 'New consultation', new_consultation_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
+
+

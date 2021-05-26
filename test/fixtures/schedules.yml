@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  consultation: one
+  start_at: 2021-05-26 05:33:21
+  end_at: 2021-05-26 05:33:21
+
+two:
+  user: two
+  consultation: two
+  start_at: 2021-05-26 05:33:21
+  end_at: 2021-05-26 05:33:21

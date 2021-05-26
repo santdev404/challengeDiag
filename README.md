@@ -8,7 +8,7 @@ Diagnostikare challenge project.
 - Rails version: rails 6.1
 - Postgres db
 
-## Instaletion steps:
+## Instalation steps:
 Once the project is download in local enviroment, enter in the project folder and execute in terminal:
 - bundle install
 - rails db:create db:migrate

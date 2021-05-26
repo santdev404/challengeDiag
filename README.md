@@ -22,3 +22,6 @@ In order to schedule a consultation follow the instruction below:
 - Fill out the form with the disease information.
 - Click schedule button (the consultation is scheduled automatically once the consultation is saved).
 - Once the consultation is saved the view will show the schedule data.
+
+## Database configuration
+In order to install the database is require to update the credentials inside database.yml

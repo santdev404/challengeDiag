@@ -4,6 +4,7 @@ class Schedule < ApplicationRecord
 
 
   before_create :set_schedule_time
+  after_create :notify_user
   
 
   def set_schedule_time
@@ -12,6 +13,8 @@ class Schedule < ApplicationRecord
   end
 
 
-
+  def notify_user
+    NotificationMailer.notificate_user(self.id).deliver_now
+  end
 
 end

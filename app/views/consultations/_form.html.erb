@@ -1,0 +1,67 @@
+<%= form_with(model: consultation) do |form| %>
+  <% if consultation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+
+      <ul>
+        <% consultation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :disease %>
+    <%= form.text_field :disease %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body_mass %>
+    <%= form.text_field :body_mass %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temperature %>
+    <%= form.text_field :temperature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :respiratory_rate %>
+    <%= form.number_field :respiratory_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :systolic %>
+    <%= form.number_field :systolic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diastolic %>
+    <%= form.number_field :diastolic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :heart_rate %>
+    <%= form.number_field :heart_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

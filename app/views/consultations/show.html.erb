@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Disease:</strong>
+  <%= @consultation.disease %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @consultation.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @consultation.weight %>
+</p>
+
+<p>
+  <strong>Body mass:</strong>
+  <%= @consultation.body_mass %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @consultation.temperature %>
+</p>
+
+<p>
+  <strong>Respiratory rate:</strong>
+  <%= @consultation.respiratory_rate %>
+</p>
+
+<p>
+  <strong>Systolic:</strong>
+  <%= @consultation.systolic %>
+</p>
+
+<p>
+  <strong>Diastolic:</strong>
+  <%= @consultation.diastolic %>
+</p>
+
+<p>
+  <strong>Heart rate:</strong>
+  <%= @consultation.heart_rate %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @consultation.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_consultation_path(@consultation) %> |
+<%= link_to 'Back', consultations_path %>

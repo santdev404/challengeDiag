@@ -1,67 +1,94 @@
-<%= form_with(model: consultation) do |form| %>
-  <% if consultation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+<div class="container">
+</div>
 
-      <ul>
-        <% consultation.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="row justify-content-center">
+  <div class="col-10">
 
-  <div class="field">
-    <%= form.label :disease %>
-    <%= form.text_field :disease %>
+    <%= render 'shared/errors', obj: @consultation%>
+
+    <%= form_with(model: consultation, class: "shadow p-3 mb-3 rounded",local: true) do |f| %>
+    
+      <div class="form-group row">
+        <%= f.label :disease, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :disease, class: "form-control shadow rounded" %>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :height, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :height, class: "form-control shadow rounded"%>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :weight, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :weight, class: "form-control shadow rounded" %>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :body_mass, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :body_mass, class: "form-control shadow rounded" %>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :temperature, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :temperature, class: "form-control shadow rounded"%>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :respiratory_rate, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :respiratory_rate, class: "form-control shadow rounded" %>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :systolic, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :systolic, class: "form-control shadow rounded"%>
+        </div>
+      </div>
+      <br/>
+    
+      <div class="form-group row">
+        <%= f.label :heart_rate, class: "col-2 col-form-label " %>
+        <div class="col-8">
+            <%= f.text_field :heart_rate, class: "form-control shadow rounded" %>
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group row">
+        
+        <div class="col-6">
+          <%= f.submit 'Save & Schedule consultation',  class: "btn btn-primary" %>
+        </div>
+
+                
+        <div class="col-6">
+          <%= link_to 'Cancel', root_path, class: "btn btn-danger" %>
+        </div>
+      
+      <br/>
+  
+    <% end %>
+
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :height %>
-    <%= form.text_field :height %>
-  </div>
 
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.text_field :weight %>
-  </div>
 
-  <div class="field">
-    <%= form.label :body_mass %>
-    <%= form.text_field :body_mass %>
-  </div>
-
-  <div class="field">
-    <%= form.label :temperature %>
-    <%= form.text_field :temperature %>
-  </div>
-
-  <div class="field">
-    <%= form.label :respiratory_rate %>
-    <%= form.number_field :respiratory_rate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :systolic %>
-    <%= form.number_field :systolic %>
-  </div>
-
-  <div class="field">
-    <%= form.label :diastolic %>
-    <%= form.number_field :diastolic %>
-  </div>
-
-  <div class="field">
-    <%= form.label :heart_rate %>
-    <%= form.number_field :heart_rate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

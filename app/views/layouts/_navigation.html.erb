@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="container">
+
+      <%= link_to 'Diagnostikare', root_path, class: 'navbar-brand'%>
+
+
+    <% if current_user %>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to 'New consultation', new_consultation_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item" >
+              <%= link_to 'Schedules', schedules_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profile
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                <%= link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item' %>
+          
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">User email: <%= current_user.email %></a>
+            </li>
+          </ul>
+
+          <ul class='navbar-nav ml-auto'>
+
+
+            <li class='nav-item'>
+              <%= link_to("Logout", destroy_user_session_path, class: 'btn btn-danger logout-button', method: :delete) %>
+            </li>
+          </ul>
+        
+        </div>
+
+    <%end%>
+
+
+  </div>
+
+
+
+</nav>
